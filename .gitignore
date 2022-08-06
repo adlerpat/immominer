@@ -1,0 +1,6 @@
+**/data/charts/**
+**/data/raw/**
+**/data/reworked/**
+**/build
+
+**/node_modules

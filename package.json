@@ -1,0 +1,25 @@
+{
+  "name": "immoscoutmining",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/mine.js && node build/rework.js && node build/chart.js",
+    "mine": "npm run build && node build/mine.js",
+    "rework": "npm run build && node build/rework.js",
+    "chart": "npm run build && node build/chart.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.0.6",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "chart.js": "^3.9.1",
+    "chartjs-node-canvas": "^4.1.6"
+  }
+}
