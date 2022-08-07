@@ -2,14 +2,18 @@ const fs = require('fs');
 const { ChartJSNodeCanvas } = require('chartjs-node-canvas');
 
 fs.readdir("./data/reworked/", (err: any, filenames: string[]) => {
-    filenames.forEach((filename) => {
+    filenames.filter((val) => val.includes(".json")).forEach((filename) => {
         fs.readFile("./data/reworked/" + filename, "utf-8", (err: any, content: any) => {
             if (err) {
+                console.log(filename);
+                console.log(content);
                 console.log(err);
+            } else{
+                const contents = JSON.parse(content);
+                if(contents){
+                    renderChart(filename, contents);
+                }
             }
-
-            renderChart(filename, JSON.parse(content));
-
         });
     });
 });
