@@ -4,7 +4,7 @@ const fs = require('fs');
 
 fs.readdir("./data/raw/", (err: any, filenames: string[]) => {
     const contents : any[] = [];
-    filenames = filenames.filter(x => x.includes("2022-"));
+    filenames = filenames.filter(x => x.includes(".json"));
     filenames.forEach((filename) => {
         fs.readFile("./data/raw/"+filename, "utf-8", (err: any, content: any) => {
             if(err){
